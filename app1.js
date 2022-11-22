@@ -26,7 +26,7 @@ addItems.style.color = "green"
 addItems.style.fontSize = 'bold'
 
 // get elements by class name
-let items = document.getElementsByClassName('list-group-item')
+/*let items = document.getElementsByClassName('list-group-item')
 console.log(items)
 console.log(items[1])
 items[1].textContent = 'Hello 2'
@@ -37,4 +37,24 @@ items[2].style.backgroundColor = 'green'
 
 for(let i=0; i<items.length; i++){
     items[i].style.fontWeight = 'bold'
+} */
+
+// get element by tag name
+let li = document.getElementsByTagName('li')
+console.log(li)
+console.log(li[1])
+li[1].textContent = 'Hello 2'
+li[1].style.fontWeight = 'bold'
+li[1].style.backgroundColor = 'yellow'
+
+li[2].style.backgroundColor = 'green'
+
+for(let i=0; i<li.length; i++){
+    li[i].style.fontWeight = 'bold'
 }
+
+let items = document.getElementsByClassName('list-group-item')
+
+//for(let i=0; i<items.length; i++){
+//    items[i].style.backgroundColor = 'grey' // item 5 not //working for getElementsByClassName
+//}

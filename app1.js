@@ -12,7 +12,7 @@ console.log(document.forms)
 console.log(document.links)
 console.log(document.images) */
 
-var headerTitle = document.getElementById('header-title')
+/*var headerTitle = document.getElementById('header-title')
 var header = document.getElementById('main-header')
 // console.log(headerTitle)
 // headerTitle.textContent = 'Hello'
@@ -38,7 +38,7 @@ items[2].style.backgroundColor = 'green'
 for(let i=0; i<items.length; i++){
     items[i].style.fontWeight = 'bold'
 } */
-
+/*
 // get element by tag name
 let li = document.getElementsByTagName('li')
 console.log(li)
@@ -54,7 +54,50 @@ for(let i=0; i<li.length; i++){
 }
 
 let items = document.getElementsByClassName('list-group-item')
-
+*/
 //for(let i=0; i<items.length; i++){
 //    items[i].style.backgroundColor = 'grey' // item 5 not //working for getElementsByClassName
 //}
+
+// queryselector
+/*let header = document.querySelector('#main-header')
+header.style.borderBottom = 'solid 4px #ccc'
+
+let input = document.querySelector('input')
+input.value = 'Hello World!'
+
+let submit = document.querySelector('input[type="submit"]')
+submit.value = 'SEND'
+
+let item = document.querySelector('.list-group-item')
+item.style.color = 'red'
+
+let lastItem = document.querySelector('.list-group-item:last-child')
+lastItem.style.color = 'blue'
+
+let secondItem = document.querySelector('.list-group-item:nth-child(2)')
+secondItem.style.color = 'coral'
+*/
+// Deliverable 1
+// let secondItem = document.querySelector('.list-group-item:nth-child(2)')
+// secondItem.style.backgroundColor = 'green'
+// Deliverable 2
+// let thirdItem = document.querySelector('.list-group-item:nth-child(3)')
+// thirdItem.remove();
+
+// query selector all
+let listTitles = document.querySelectorAll('.list-group-item')
+console.log(listTitles)
+listTitles[1].style.color = 'green'
+
+let odd = document.querySelectorAll('li:nth-child(odd')
+for(let i=0; i<odd.length; i++){
+    odd[i].style.backgroundColor = 'green'
+    
+}
+
+let even = document.querySelectorAll('li:nth-child(even)')
+
+//even[i].style.backgroundColor = '#ccc'
+ // deliverable 3 - Diffenence between queryselector and queryselectorAll
+ /*The main difference is in querySelector only the First element got selected. But for querySelectorAll all the elements got selected and we can perfome operations all of them at a time */

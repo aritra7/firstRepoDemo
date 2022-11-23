@@ -22,17 +22,23 @@ function addItem(e){
 
   // Create del button element
   var deleteBtn = document.createElement('button');
+  var editBtn = document.createElement('button');
 
   // Add classes to del button
+  editBtn.className = 'btn btn-danger btn-sm float-right delete';
   deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
   // Append text node
+  editBtn.appendChild(document.createTextNode('Edit'))
   deleteBtn.appendChild(document.createTextNode('X'));
+  
 
   // Append button to li
+  li.appendChild(editBtn);
   li.appendChild(deleteBtn);
 
   // Append li to list
+  itemList.appendChild(li);
   itemList.appendChild(li);
 }
 

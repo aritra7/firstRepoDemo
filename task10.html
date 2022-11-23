@@ -3,14 +3,16 @@
 <html>
 <body>
 
-<h2>HTML Forms</h2>
+<h2>Appoinment Booking</h2>
 
-<form class="my-form">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="name" name="fname" placeholder="John"><br>
-  <input type="text" id="lname" name="lname" placeholder="Doe"><br>
+<form onsubmit="saveToLocalStorage(event)">
+  <label for="fname">Name:</label><br>
+  <input type="text" id="name" name="username" placeholder="John"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="emailId" placeholder="Doe"><br>
   <input class="btn" type="submit" value="Submit">
 </form>
+<ul id="listofusers"></ul>
 <script src="/event.js"></script>
 </body>
 </html>

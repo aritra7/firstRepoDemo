@@ -20,23 +20,51 @@
 //     localStorage.setItem('myObj',myObj_serialized);
     
 // }
-
 function saveToLocalStorage(event){
     event.preventDefault();
     const name = event.target.username.value;
     const email = event.target.emailId.value;
     // localStorage.setItem('name',name);
     // localStorage.setItem('email',email)
-    const obj = {
+    const userDetailsObj = {
         name,
         email
     }
-    localStorage.setItem(obj.email,JSON.stringify(obj));
-    showNewuserOnScreen(obj)
+    localStorage.setItem(userDetailsObj.email,JSON.stringify(userDetailsObj));
+    showNewUserOnScreen(userDetailsObj)
 }
 
-function showNewuserOnScreen(user){
-    const parentNode = document.getElementById('listofusers');
-    const childHTML = '<li> ${user.name} - ${user.email}</li>'
+window.addEventListener("DOMContentLoaded", () => {
+    const localStorageObj = localStorage;
+    const localstoragekeys  = Object.keys(localStorageObj)
+
+    for(var i =0; i< localstoragekeys.length; i++){
+        const key = localstoragekeys[i]
+        const userDetailsString = localStorageObj[key];
+        const userDetailsObj = JSON.parse(userDetailsString);
+        showNewUserOnScreen(userDetailsObj)
+    }
+})
+
+function showNewUserOnScreen(user){
+    const parentNode = document.getElementById('listOfUsers');
+    const childHTML = `<li id=${user.email}> ${user.name} - ${user.email}
+                            <button onclick=deleteUser('${user.email}')> Delete User </button>
+                         </li>`
+
     parentNode.innerHTML = parentNode.innerHTML + childHTML;
+}
+
+function deleteUser(emailId){
+    console.log(emailId)
+    localStorage.removeItem(emailId);
+    removeUserFromScreen(emailId);
+
+}
+
+function removeUserFromScreen(emailId){
+    const parentNode = document.getElementById('listOfUsers');
+    const childNodeToBeDeleted = document.getElementById(emailId);
+
+    parentNode.removeChild(childNodeToBeDeleted)
 }
